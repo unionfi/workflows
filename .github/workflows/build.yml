@@ -288,7 +288,7 @@ jobs:
                 --print-build-logs \
                 --eval-store auto \
                 --store ssh-ng://eu.nixbuild.net \
-                --builders "ssh://eu.nixbuild.net ${{matrix.build.system}} - 100 1 big-parallel,benchmark" --max-jobs 2 \
+                --builders "ssh://eu.nixbuild.net ${{matrix.build.system}} - 100 1 big-parallel,benchmark" --max-jobs 2 --show-trace \
                 --json > build.json \
                 2> >(tee -a build.log >&2) || true
             else
